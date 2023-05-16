@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makine Yönetimi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      text-align: center;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Makine Yönetimi</h2>
+
+    <!-- Makine Ekleme Formu -->
+    <div class="card">
+      <div class="card-header">
+        Makine Ekle
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="makine-id">ID:</label>
+          <input type="text" class="form-control" id="makine-id">
+        </div>
+        <div class="form-group">
+          <label for="makine-ad">Ad:</label>
+          <input type="text" class="form-control" id="makine-ad">
+        </div>
+        <div class="form-group">
+          <label for="makine-aciklama">Açıklama:</label>
+          <textarea class="form-control" id="makine-aciklama" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="makine-urun-adet">Ürün Adedi:</label>
+          <input type="number" class="form-control" id="makine-urun-adet">
+        </div>
+        <div class="form-group">
+          <label for="grup-id">Grup ID:</label>
+          <select class="form-control" id="grup-id">
+            <option value="A">Grup A</option>
+            <option value="B">Grup B</option>
+            <option value="C">Grup C</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="ekleMakine()">Ekle</button>
+      </div>
+    </div>
+
+    <!-- Makine Tablosu -->
+    <h2>Makine Tablosu</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ad</th>
+          <th>Açıklama</th>
+          <th>Ürün Adedi</th>
+          <th>Grup ID</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody id="makine-tablosu">
+        <!-- Makine verileri burada oluşturulacak -->
+      </tbody>
+    </table>
+
+    <!-- Ürün Ekleme Formu -->
+    <div class="card">
+<div class="card-header">
+Ürün Ekle
+</div>
+<div class="card-body">
+<div class="form-group">
+<label for="urun-id">ID:</label>
+<input type="text" class="form-control" id="urun-id">
+</div>
+<div class="form-group">
+<label for="urun-ad">Ad:</label>
+<input type="text" class="form-control" id="urun-ad">
+</div>
+<div class="form-group">
+<label for="urun-aciklama">Açıklama:</label>
+<textarea class="form-control" id="urun-aciklama" rows="3"></textarea>
+</div>
+<button type="button" class="btn btn-primary" onclick="ekleUrun()">Ekle</button>
+</div>
+</div>
+
+<!-- Ürün Tablosu -->
+<h2>Ürün Tablosu</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ad</th>
+      <th>Açıklama</th>
+      <th>İşlemler</th>
+    </tr>
+  </thead>
+  <tbody id="urun-tablosu">
+    <!-- Ürün verileri burada oluşturulacak -->
+  </tbody>
+</table>
+
+<!-- Makine İçerikleri Ekleme Formu -->
+<div class="card">
+  <div class="card-header">
+    Makine İçerikleri Ekle
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="ic-id">ID:</label>
+      <input type="text" class="form-control" id="ic-id">
+    </div>
+    <div class="form-group">
+      <label for="ic-metin">Metin:</label>
+      <textarea class="form-control" id="ic-metin" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="ic-urun-adet">Ürün Adedi:</label>
+      <input type="number" class="form-control" id="ic-urun-adet">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="ekleIcerik()">Ekle</button>
+  </div>
+</div>
+
+<!-- Makine İçerikleri Tablosu -->
+<h2>Makine İçerikleri</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>ID</th>
+<th>Metin</th>
+<th>Ürün Adedi</th>
+<th>İşlemler</th>
+</tr>
+</thead>
+<tbody id="icerik-tablosu">
+<!-- Makine içerikleri verileri burada oluşturulacak -->
+</tbody>
+</table>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
